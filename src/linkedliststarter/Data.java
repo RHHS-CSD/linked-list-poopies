@@ -9,7 +9,9 @@ package linkedliststarter;
  * @author michael.roy-diclemen
  */
 public class Data implements Comparable{
-    
+    private String code = null;
+    private String teacher = null;
+    private int period = 0;
     @Override
     public String toString(){
         return null;
@@ -21,7 +23,11 @@ public class Data implements Comparable{
         if (! (o instanceof Data))
             return false;
         //add code to properly compare
-        
+        else{
+            Data d = (Data)o;
+            if(this.code.equals(d.code)&&this.teacher.equals(d.teacher)&&this.period == d.period)
+                return true;
+            }
         return true;
         
     }
