@@ -9,5 +9,22 @@ package linkedliststarter;
  * @author michael.roy-diclemen
  */
 public class Node {
+    private Data data = null;
+    private Node next = null;
     
+    public Node(String insert){
+        
+    }
+    
+    public void setData(Data d){
+        
+    }
+    
+    public Node getNext(){
+        return next;
+    }
+    
+    public void setNext(Node n){
+        next = n;
+    }
 }
