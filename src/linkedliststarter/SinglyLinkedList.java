@@ -18,7 +18,11 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        int count = 0;
+        while(head.getNext() != null){
+            count++;
+        }
+        return count;
     }
 
     /**
@@ -26,7 +30,8 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        head = null;
+        tail = null;    
     }
 
     /**
