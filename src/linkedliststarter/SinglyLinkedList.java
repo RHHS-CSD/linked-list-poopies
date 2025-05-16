@@ -43,6 +43,8 @@ public class SinglyLinkedList implements ILinkedList{
     @Override
     public boolean remove(Data item) {
         throw new UnsupportedOperationException("Not supported yet.");
+        
+        // Go through each of the items, if the item is equal to the one given as a paramater, get that one's index and call remove(index);
     }
 
     /**
@@ -54,6 +56,8 @@ public class SinglyLinkedList implements ILinkedList{
     @Override
     public boolean remove(int index) {
         throw new UnsupportedOperationException("Not supported yet."); 
+        
+        
     }
 
     /**
