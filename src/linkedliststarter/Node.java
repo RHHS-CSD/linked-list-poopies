@@ -12,8 +12,8 @@ public class Node {
     private Data data = null;
     private Node next = null;
     
-    public Node(String insert){
-        
+    public Node(Data insert){
+        data = insert;
     }
     
     public void setData(Data d){
