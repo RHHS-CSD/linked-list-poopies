@@ -17,7 +17,7 @@ public class Node {
     }
     
     public void setData(Data d){
-        
+        data = d;
     }
     
     public Node getNext(){
