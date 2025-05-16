@@ -96,20 +96,26 @@ public class SinglyLinkedList implements ILinkedList{
      * Add the gen item to the end of the linked list
      * @param item Item to add
      * @return true if successfuuly added, false otherwise
+     * 
+     * 
+     * complete
      */
     @Override
     public boolean add(String item) {
+        //create data and node
         String[] components = item.split(" ");
         Data d = new Data(components[0],components[1],Integer.parseInt(components[2]));
         Node n = new Node(d);
-        if(size()==0){
+        //if empty
+        if(head==null){
             head = n;
             tail = n;
             return true;  
         }
+        //add a next to the tail and set it to tail
         else{
             tail.setNext(n);
-            tail = n;   
+            tail = tail.getNext();   
             return true;
         }
     }
@@ -119,9 +125,16 @@ public class SinglyLinkedList implements ILinkedList{
      * @param item Item to add
      * @param index The position to add the item
      * @return true if successfuuly added, false otherwise
+     * 
+     * 
+     * Consider if list is empty
+     * 
      */
     @Override
     public boolean add(String item, int index) {
+        if(index < 0){
+                return false;
+            }
         String[] components = item.split(" ");
         Data d = new Data(components[0],components[1],Integer.parseInt(components[2]));
         Node n = new Node(d);
