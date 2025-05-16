@@ -12,6 +12,13 @@ public class Data implements Comparable{
     private String code = null;
     private String teacher = null;
     private int period = 0;
+    
+    public Data(String code, String teacher, int period){
+        this.code = code;
+        this.teacher = teacher;
+        this.period = period;
+    }
+    
     @Override
     public String toString(){
         return null;
@@ -34,7 +41,7 @@ public class Data implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        
-        return 0;
+        Data d = (Data)o;
+        return this.teacher.compareTo(d.teacher);
     }
 }
