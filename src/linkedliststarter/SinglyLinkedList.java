@@ -18,7 +18,7 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public int size() {
-        int count = 0;
+        int count = 1;
         while(head.getNext() != null){
             count++;
         }
@@ -42,8 +42,15 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public boolean remove(Data item) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Node temp = head;
+        for(int i = 0; i < size(); i++){ 
+            if(temp.equals(item)){
+                return remove(i); 
+            }
+            temp = temp.getNext();
+        }
         
+        return false;
         // Go through each of the items, if the item is equal to the one given as a paramater, get that one's index and call remove(index);
     }
 
@@ -55,9 +62,14 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public boolean remove(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        if(index == 0){
+            head = head.getNext();
+            return true;
+        } else if(index == size() - 1){
+            
+        }
         
-        
+        return false;
     }
 
     /**
