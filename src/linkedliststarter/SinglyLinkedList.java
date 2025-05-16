@@ -115,12 +115,21 @@ public class SinglyLinkedList implements ILinkedList{
         Node n = new Node(d);
         Node temp = head;
         try{
-            for(int i = 0;i<index;i++){
-                temp = temp.getNext();
+            if(index==0){
+                n.setNext(head);
+                head = n;
             }
-            Node storedNext = temp.getNext();
-            temp.setNext(n);
-            temp.getNext().setNext(storedNext);
+            else if(index<size()){
+                for(int i = 0;i<index;i++){
+                    temp = temp.getNext();
+                }
+                Node storedNext = temp.getNext();
+                temp.setNext(n);
+                temp.getNext().setNext(storedNext);
+            }
+            else if(index >= size()){
+                add(item);
+            }
             return true;
         }
         catch(Exception e){
