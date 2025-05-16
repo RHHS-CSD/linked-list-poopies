@@ -99,7 +99,19 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public boolean add(String item) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        String[] components = item.split(" ");
+        Data d = new Data(components[0],components[1],Integer.parseInt(components[2]));
+        Node n = new Node(d);
+        if(size()==0){
+            head = n;
+            tail = n;
+            return true;  
+        }
+        else{
+            tail.setNext(n);
+            tail = n;   
+            return true;
+        }
     }
 
     /**
@@ -110,7 +122,31 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public boolean add(String item, int index) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        String[] components = item.split(" ");
+        Data d = new Data(components[0],components[1],Integer.parseInt(components[2]));
+        Node n = new Node(d);
+        Node temp = head;
+        try{
+            if(index==0){
+                n.setNext(head);
+                head = n;
+            }
+            else if(index<size()){
+                for(int i = 0;i<index;i++){
+                    temp = temp.getNext();
+                }
+                Node storedNext = temp.getNext();
+                temp.setNext(n);
+                temp.getNext().setNext(storedNext);
+            }
+            else if(index >= size()){
+                add(item);
+            }
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
     }
     
     
