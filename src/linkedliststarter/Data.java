@@ -13,7 +13,7 @@ public class Data implements Comparable{
     private String teacher = null;
     private int period = 0;
     
-    public Data(String code, String teacher, int period){
+    public Data(String teacher, String code, int period){
         this.code = code;
         this.teacher = teacher;
         this.period = period;
@@ -21,7 +21,7 @@ public class Data implements Comparable{
     
     @Override
     public String toString(){
-        return (code+" "+"teacher"+period);
+        return ("Teacher: "+teacher+" Code: "+code+" Period: "+period);
     }
     
     @Override

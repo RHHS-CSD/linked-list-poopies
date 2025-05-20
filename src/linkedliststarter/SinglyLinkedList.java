@@ -189,7 +189,8 @@ public class SinglyLinkedList implements ILinkedList{
         String returnString = "";
         Node n = head;
         while(n!=null){
-            returnString += n.getNext().getData().toString()+"\n";
+            returnString += n.getData().toString()+"\n";
+            n=n.getNext();
         }
         return returnString;
     }
