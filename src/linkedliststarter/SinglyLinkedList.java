@@ -68,7 +68,7 @@ public class SinglyLinkedList implements ILinkedList{
         } else if(index == size() - 1){
             Node temp = head;
             
-            while(temp.getNext().getNext() != null){
+            for (int i = 0; i < index - 1; i++) {
                 temp = temp.getNext();
             }
             temp.setNext(null);
