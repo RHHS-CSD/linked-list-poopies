@@ -66,6 +66,14 @@ public class SinglyLinkedList implements ILinkedList{
             head = head.getNext();
             return true;
         } else if(index == size() - 1){
+            Node temp = head;
+            
+            while(temp.getNext().getNext() != null){
+                temp = temp.getNext();
+            }
+            temp.setNext(null);
+            tail = temp;
+
             // set tail to 2nd last
             // set last one's to null
             //loop until index - 1, set to tail
@@ -73,6 +81,11 @@ public class SinglyLinkedList implements ILinkedList{
         } else if(index >= size()){
             return false;
         } else{
+            Node temp = head;
+            for(int i = 0; i < index - 1; i ++){
+                temp = temp.getNext();
+            }
+            temp.setNext(temp.getNext().getNext());
             // loop until index -1
             // set that one's next to the 2nd next one
             return true;
