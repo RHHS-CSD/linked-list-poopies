@@ -27,4 +27,8 @@ public class Node {
     public void setNext(Node n){
         next = n;
     }
+    
+    public Data getData(){
+        return data;
+    }
 }

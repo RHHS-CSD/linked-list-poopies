@@ -11,7 +11,7 @@ package linkedliststarter;
 public class SinglyLinkedList implements ILinkedList{
     private Node head;
     private Node tail;
-
+    
     /**
      * Return the size of the Linked List
      * @return an int representing the size
@@ -134,7 +134,6 @@ public class SinglyLinkedList implements ILinkedList{
      * @return true if successfuuly added, false otherwise
      * 
      * 
-     * Consider if list is empty
      * 
      */
     @Override
@@ -142,6 +141,9 @@ public class SinglyLinkedList implements ILinkedList{
         if(index < 0){
                 return false;
             }
+        if(head == null){
+            add(item);
+        }
         String[] components = item.split(" ");
         Data d = new Data(components[0],components[1],Integer.parseInt(components[2]));
         Node n = new Node(d);
@@ -167,6 +169,16 @@ public class SinglyLinkedList implements ILinkedList{
         catch(Exception e){
             return false;
         }
+    }
+    
+    @Override
+    public String toString(){
+        String returnString = "";
+        Node n = head;
+        while(n!=null){
+            returnString += n.getNext().getData().toString()+"\n";
+        }
+        return returnString;
     }
     
     
