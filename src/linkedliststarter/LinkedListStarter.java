@@ -19,6 +19,7 @@ public class LinkedListStarter {
         sli1.add("Mr.Peters POOP 5");
         sli1.add("Mr.RD ICS4U1 4", 0);
         sli1.add("Mr.RD2 ICS4U1 4", 0);
+        System.out.println(sli1.size());
         System.out.println(sli1.toString());
         
         

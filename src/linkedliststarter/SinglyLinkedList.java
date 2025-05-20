@@ -172,10 +172,6 @@ public class SinglyLinkedList implements ILinkedList{
                 }
                 n.setNext(temp.getNext());
                 temp.setNext(n);
-                while(temp.getNext()!=null){
-                    temp = temp.getNext();
-                }
-                tail = temp;
             }
             else if(index >= size()){
                 add(item);
