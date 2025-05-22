@@ -41,12 +41,16 @@ public class SinglyLinkedList implements ILinkedList{
      * @param item The item to be removed
      * @return true: if the item was found and removed
      *         false otherwise
+     * 
+     * 
+     * doesn't work
+     * 
      */
     @Override
     public boolean remove(Data item) {
         Node temp = head;
         for(int i = 0; i < size(); i++){ 
-            if(temp.equals(item)){
+            if(temp.getData().compareTo(item)==0){
                 return remove(i); 
             }
             temp = temp.getNext();

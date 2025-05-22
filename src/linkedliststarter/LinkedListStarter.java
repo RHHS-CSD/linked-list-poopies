@@ -18,7 +18,10 @@ public class LinkedListStarter {
         SinglyLinkedList sli1 = new SinglyLinkedList();
         sli1.add("Mr.Peters POOP 5");
         sli1.add("Mr.RD ICS4U1 4", 0);
-        sli1.add("Mr.RD2 ICS4U1 4", 0);
+        sli1.add("Mr.RD2 ICS4U1 4", 9);
+        Data d = new Data("MR.Peters","POOP",5);
+        sli1.remove(d);
+        sli1.remove(1);
         System.out.println(sli1.size());
         System.out.println(sli1.toString());
         
