@@ -18,9 +18,11 @@ public class SinglyLinkedList implements ILinkedList{
      */
     @Override
     public int size() {
-        int count = 1;
-        while(head.getNext() != null){
+        int count = 0;
+        Node current = head;
+        while(current != null){
             count++;
+            current = current.getNext();
         }
         return count;
     }
